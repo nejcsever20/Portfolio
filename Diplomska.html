@@ -23,8 +23,9 @@
             padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Changed from center to flex-start */
             min-height: 100vh;
+            box-sizing: border-box; /* Ensures padding is counted inside height */
         }
 
         .container {
@@ -145,8 +146,32 @@
                 <h4>Napredna Analitika</h4>
                 <p>Pregledovalniki statistike in grafi (Chart.js) za analizo transportov, skladišč, uspešnosti delavcev in prijav.</p>
             </div>
+             <div class="feature-card">
+                <h4>Večjezičnost</h4>
+                <p>Podpora za več jezikov (slovenščina, angleščina, nemščina) z možnostjo preklopa v realnem času.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Obdelava Dokumentacije</h4>
+                <p>Samodejno generiranje in arhiviranje dokumentov (PDF) ter integracija z zunanjimi sistemi za izmenjavo podatkov.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Odziven Dizajn</h4>
+                <p>Prilagojen za različne naprave (namizni računalniki, tablice, mobilni telefoni) z uporabo CSS Flexbox in Grid.</p>
+            </div>
         </div>
-    </div>
 
+        <div class="overview-section">
+            <h3>Tehnologije in Orodja</h3>
+            <p>Projekt je razvit z uporabo sodobnih tehnologij, vključno z:</p>
+            <ul>
+                <li><strong>Visual Studio 2022</strong> za razvijanje celotne diplomske naloge</li>
+                <li><strong>ASP.NET Core MVC</strong> za robustno strežniško logiko.</li>
+                <li><strong>Razor Pages</strong> za dinamične spletne strani.</li>
+                <li><strong>Entity Framework Core</strong> za interakcijo s SQL Server bazo podatkov.</li>
+                <li><strong>Chart.js</strong> za vizualizacijo podatkov in statistike.</li>
+                <li><strong>Bootstrap 5</strong> za odziven dizajn in uporabniški vmesnik.</li>
+            </ul>S
+        </div>"
+    </div>
 </body>
 </html>
