@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nejc Sever Mihelič | Portfolio</title>
+    <link rel="stylehseet" href="style.css">
+    <style>
+        /* Modern CSS Variables & Reset */
+        :root {
+            --bg-color: #f4f6f9;
+            --container-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --accent-color: #3182ce;
+            --accent-hover: #2b6cb0;
+            --border-color: #e2e8f0;
+            --card-bg: #f8fafc;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            --bg-color: #1a202c;
+            --container-bg: #2d3748;
+            --text-main: #f7fafc;
+            --text-muted: #a0aec0;
+            --accent-color: #63b3ed;
+            --accent-hover: #4299e1;
+            --border-color: #4a5568;
+            --card-bg: #374151;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            padding: 3rem 1rem;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: var(--container-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        /* Header / Hero */
+        header {
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Theme Toggle Button */
+        #theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        #theme-toggle:hover {
+            border-color: var(--accent-color);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        /* School list styling */
+        ul {
+            list-style-type: none;
+            margin-top: 0.5rem;
+        }
+
+        ul li {
+            background: var(--card-bg);
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .project-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Interactive "Read More" Buttons & Content */
+        .read-more-btn {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .read-more-btn:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        .extra-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0;
+        }
+
+        .extra-content.show {
+            max-height: 150px; /* Expands smoothly */
+            margin-top: 0.75rem;
+        }
+
+        /* Links */
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer / Contact */
+        footer {
+            border-top: 2px solid var(--border-color);
+            padding-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div>
+                <h1>Nejc Sever Mihelič</h1>
+                <p class="tagline">Programer spletnih strani in aplikacij</p>
+            </div>
+            <button id="theme-toggle">Dark Mode</button>
+        </header>
+
+        <!-- About Section -->
+        <section>
+            <h2>O meni</h2>
+            <p>Zdravo, sem Nejc Sever Mihelič, rojen 3. avgusta 2004 v Slovenj Gradcu. Že od nekdaj me navdušujeta programiranje in delo z računalniki, zato sem se že zgodaj odločil za svojo pot v svetu tehnologije.</p>
+            
+            <button class="read-more-btn" id="about-toggle-btn">Preberi več o meni</button>
+            <div class="extra-content" id="about-extra">
+                <p>Poleg kodiranja rad raziskujem nove tehnologije, optimiziram delovanje aplikacij in stremim k temu, da ustvarjam čisto, berljivo ter učinkovito kodo.</p>
+            </div>
+
+            <div class="about-section" style="margin-top: 1.5rem;">
+                <h2>Šolanje</h2>
+                <ul>
+                    <li>Elektro računalniška šola Velenje (Računalniški tehnik) &rarr; Zaključeno 2024</li>
+                    <li>Višja strokovna šola Velenje (Informatika) &rarr; Zaključeno 2026 (diploma)</li>
+                    <li>FERI Maribor (Informatika in tehnologije komuniciranja) &rarr; Trenutno visan v 1. letnik</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <h2>Projekti</h2>
+            <div class="project-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>Diplomska naloga -- Velenje</h3>
+                    <p>Moj zaključni projekt, ki povzema pridobljeno znanje in rešuje specifičen tehnični problem.</p>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                        <a href="Diplomska.html" class="read-more-btn">Preberi več</a>
+                        <a href="https://github.com/nejcsever20/DiplomskaNaloga" target="_blank" class="read-more-btn" style="border-color: var(--border-color);">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>Movies</h3>
+                    <p>Spletna aplikacija za pregled, iskanje in upravljanje s filmskimi vsebinami.</p>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                        <a href="Movies.html" class="read-more-btn">Preberi več</a>
+                        <a href="https://github.com/nejcsever20/Movies" target="_blank" class="read-more-btn" style="border-color: var(--border-color);">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>Calorie Counter</h3>
+                    <p>Praktično orodje za sledenje dnevnemu vnosu kalorij, obrokom in prehranskim navadam.</p>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                        <a href="CalorieCounter.html" class="read-more-btn">Preberi več</a>
+                        <a href="https://github.com/nejcsever20/CalorieCounter" target="_blank" class="read-more-btn" style="border-color: var(--border-color);">View Code &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer>
+            <h2>Kontakt</h2>
+            <p>Stopite v stik z mano preko e-pošte na <a href="mailto:sever.nejc57@gmail.com, mailto:nejc.sever@student.um.si">sever.nejc57@gmail.com, nejc.sever@student.um.si</a> ali me obiščite na <a href="https://github.com" target="_blank">GitHub</a> / <a href="https://linkedin.com" target="_blank">LinkedIn</a>.</p>
+            <p>Telefon: 041-233-545</p>
+            <p>&copy; 2023 Nejc Sever Mihelič</p>
+        </footer>
+    </div>
+
+    <!-- External Script Mock (app.js functionality included) -->
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                themeToggleBtn.textContent = 'Light Mode';
+            } else {
+                themeToggleBtn.textContent = 'Dark Mode';
+            }
+        });
+
+        // Interactive "Read More" Toggle Logic (app.js style)
+        const aboutToggleBtn = document.getElementById('about-toggle-btn');
+        const aboutExtra = document.getElementById('about-extra');
+
+        aboutToggleBtn.addEventListener('click', () => {
+            aboutExtra.classList.toggle('show');
+            
+            if (aboutExtra.classList.contains('show')) {
+                aboutToggleBtn.textContent = 'Skrij besedilo';
+            } else {
+                aboutToggleBtn.textContent = 'Preberi več o meni';
+            }
+        });
+    </script>
+
+</body>
+</html>
