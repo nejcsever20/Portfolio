@@ -1,0 +1,177 @@
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacija ApiProject - Nejc Sever Mihelič</title>
+    <style>
+        :root {
+            --primary-color: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gradient: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            --card-bg: #ffffff;
+            --border-color: #ddd6fe;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: var(--card-bg);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 5px;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 4px;
+            background: var(--primary-color);
+            width: 80px;
+            margin: 0 0 30px 0;
+            border-radius: 2px;
+        }
+
+        .overview-section {
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-dark);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Aplikacija ApiProject (Web API)</h1>
+        <div class="subtitle">Osebni projekt | Nejc Sever Mihelič</div>
+        <hr>
+        
+        <div class="overview-section">
+            <h3>Pregled delovanja aplikacije</h3>
+            <p>Projekt predstavlja napreden backend Web API, razvit z ogrodjem <strong>ASP.NET Core Web API</strong>. Glavni cilj rešitve je zagotavljanje varne, zmogljive in skalabilne RESTful storitve za izmenjavo podatkov med podatkovno bazo ter zunanjimi odjemalci (spletne aplikacije, mobilne naprave ali zunanji integracijski sistemi).</p>
+            
+            <p>Arhitektura API-ja temelji na ločenih slojih (Controller/Service/Repository vzorec) ter uporabi Entity Framework Core za delo s SQL Server bazo. Za enostavno testiranje in dokumentiranje končnih točk (endpoints) je vključena interaktivna dokumentacija Swagger (OpenAPI).</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>RESTful Končne Točke</h4>
+                <p>Standardizirane HTTP metode (GET, POST, PUT, DELETE) za celovito upravljanje virov ter ustrezne kode odgovorov.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Swagger / OpenAPI</h4>
+                <p>Integriran Swagger UI za sprotno testiranje API zahtev ter pregledno dokumentacijo vseh vhodnih in izhodnih modelov.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Avtentikacija & JWT Žetoni</h4>
+                <p>Varna avtorizacija dostopa do končnih točk z uporabo JSON Web Token (JWT) standarda in avtentikacije uporabnikov.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Validacija Podatkov & DTO</h4>
+                <p>Uporaba DTO (Data Transfer Object) vzorca in validacije vhodnih podatkov za preprečevanje neveljavnih vnosov.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Entity Framework Core</h4>
+                <p>Učinkovita komunikacija s podatkovno bazo, asinhrono izvajanje poizvedb (async/await) ter upravljanje migracij.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Centralizirano Lovljenje Napak</h4>
+                <p>Enotno obvladovanje izjem (global error handling middleware) z ustreznim formatiranjem napak za odjemalca.</p>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>Tehnologije in Orodja</h3>
+            <p>Projekt je razvit z uporabo sodobnih backend tehnologij in orodij:</p>
+            <ul>
+                <li><strong>Visual Studio 2022</strong> za razvoj backend arhitekture.</li>
+                <li><strong>ASP.NET Core Web API</strong> za izdelek RESTful storitev.</li>
+                <li><strong>Entity Framework Core</strong> za objektno-relacijsko preslikovanje (ORM).</li>
+                <li><strong>Swagger / OpenAPI</strong> za interaktivno dokumentacijo API-ja.</li>
+                <li><strong>SQL Server / LocalDB</strong> za shranjevanje podatkov.</li>
+                <li><strong>Postman / Swagger UI</strong> za testiranje in preverjanje končnih točk.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacija TodoListReact - Nejc Sever Mihelič</title>
+    <style>
+        :root {
+            --primary-color: #06b6d4;
+            --primary-dark: #0e7490;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gradient: linear-gradient(135deg, #ecfeff 0%, #cffaff 100%);
+            --card-bg: #ffffff;
+            --border-color: #a5f3fc;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: var(--card-bg);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 5px;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 4px;
+            background: var(--primary-color);
+            width: 80px;
+            margin: 0 0 30px 0;
+            border-radius: 2px;
+        }
+
+        .overview-section {
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-dark);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Aplikacija TodoList React</h1>
+        <div class="subtitle">Osebni projekt | Nejc Sever Mihelič</div>
+        <hr>
+        
+        <div class="overview-section">
+            <h3>Pregled delovanja aplikacije</h3>
+            <p>Projekt predstavlja dinamično in interaktivno jedrno spletno aplikacijo za upravljanje opravil in dnevnih obveznosti, razvito z knjižnico <strong>React.js</strong>. Glavni cilj sistema je uporabniku zagotoviti bliskovito hitro uporabniško izkušnjo brez osveževanja strani (SPA - Single Page Application) z intuitivnim upravljanjem stanja aplikacije (state management).</p>
+            
+            <p>Sistem omogoča sprotno dodajanje, označevanje opravljenih nalog, urejanje ter filtriranje obveznosti. Shranjevanje podatkov je lahko lokalno (LocalStorage) ali preko integracije z zunanjim API-jem za varno in trajno hranjenje stanja.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>Upravljanje Opravil (CRUD)</h4>
+                <p>Enostavno ustvarjanje novih nalog, spreminjanje besedila, označevanje dokončanih opravil ter brisanje.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Filtriranje po Stanju</h4>
+                <p>Hiter pregled nalog glede na status: vsa opravila, aktivna/nedokončana ter zaključena opravila.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Komponentna Arhitektura</h4>
+                <p>Zasnova z večkrat uporabnimi React komponentami (TaskInput, TaskItem, TaskList, FilterButtons) za čisto kodo.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Reaktivno Stanje (React Hooks)</h4>
+                <p>Uporaba modernih React konceptov (useState, useEffect) za dinamično posodabljanje uporabniškega vmesnika v realnem času.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Lokalno Shranjevanje</h4>
+                <p>Integracija z LocalStorage za ohranjanje vnosa nalog tudi ob osvežitvi ali ponovnem obisku strani.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Sodoben & Odziven UI</h4>
+                <p>Čist in minimalističen dizajnerski pristop z nemoteno uporabo na mobilnih napravah in namiznih računalnikih.</p>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>Tehnologije in Orodja</h3>
+            <p>Projekt je razvit z uporabo sodobnih orodij za front-end spletni razvoj:</p>
+            <ul>
+                <li><strong>React.js</strong> za gradnjo interaktivnega uporabniškega vmesnika (UI).</li>
+                <li><strong>JavaScript (ES6+)</strong> za sodobno logiko in manipulacijo podatkov.</li>
+                <li><strong>HTML5 & CSS3</strong> za strukturo, stilsko oblikovanje in odzivnost.</li>
+                <li><strong>Node.js & npm</strong> za upravljanje paketov in razvojno okolje.</li>
+                <li><strong>Visual Studio Code</strong> za razvoj in pisanje kode.</li>
+                <li><strong>GitHub</strong> za verzioniranje in gostovanje projekta.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

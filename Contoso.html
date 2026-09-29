@@ -1,0 +1,177 @@
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacija Contoso - Nejc Sever Mihelič</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gradient: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            --card-bg: #ffffff;
+            --border-color: #bfdbfe;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: var(--card-bg);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 5px;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 4px;
+            background: var(--primary-color);
+            width: 80px;
+            margin: 0 0 30px 0;
+            border-radius: 2px;
+        }
+
+        .overview-section {
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-dark);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Aplikacija Contoso University</h1>
+        <div class="subtitle">Osebni / Izobraževalni projekt | Nejc Sever Mihelič</div>
+        <hr>
+        
+        <div class="overview-section">
+            <h3>Pregled delovanja aplikacije</h3>
+            <p>Projekt predstavlja celovito spletno aplikacijo za upravljanje izobraževalne ustanove (študenti, profesorji, predmeti in vpisi), razvito z ogrodjem <strong>ASP.NET Core MVC</strong> in <strong>Entity Framework Core</strong>. Glavni cilj sistema je prikaz kompleksnih podatkovnih relacij (1:N in M:N), upravljanje vpisnih rokov ter spremljanje akademskega napredka.</p>
+            
+            <p>Sistem vključuje napredno obdelavo podatkov, razvrščanje (sorting), filtriranje, strančenje (paging) ter zanesljivo upravljanje transakcij v SQL Server podatkovni bazi za zagotavljanje konsistentnosti podatkov.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>Upravljanje Študentov & Profesorjev</h4>
+                <p>Celovit pregled, dodajanje, urejanje in brisanje podatkov o študentih, predavateljih in njihovi pripadnosti oddelkom.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Katalog Predmetov & Vpisi</h4>
+                <p>Dodeljevanje predmetov profesorjem, vpisovanje študentov na predmete ter vodenje ocen in kreditnih točk (KT/ECTS).</p>
+            </div>
+            <div class="feature-card">
+                <h4>Filtriranje, Iskanje & Paging</h4>
+                <p>Optimiziran prikaz velikih količin podatkov z možnostjo hitrega iskanja po priimku ali imenu ter strančenja rezultaov.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Kompleksne Relacije (EF Core)</h4>
+                <p>Uporaba naprednih Entity Framework koncepte, kot so explicit/eager loading, obdelava konfliktov sočasnosti (concurrency) in migracije.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Statistika & Poročila</h4>
+                <p>Agregirani pregledi števila vpisanih študentov po datumih ter statistika uspešnosti po posameznih predmetih.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Odziven UI</h4>
+                <p>Sodoben uporabniški vmesnik z uporabo CSS Flexbox/Grid in Bootstrap komponent za prilagodljivost na vseh ekranih.</p>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>Tehnologije in Orodja</h3>
+            <p>Projekt je razvit z uporabo sodobnih tehnologij za spletni razvoj in upravljanje podatkov:</p>
+            <ul>
+                <li><strong>Visual Studio 2022</strong> za razvoj in arhitekturo rešitve.</li>
+                <li><strong>ASP.NET Core MVC</strong> za grajenje strežniške logike in uporabniških pogledov.</li>
+                <li><strong>Entity Framework Core</strong> za objektno-relacijsko preslikovanje (ORM).</li>
+                <li><strong>SQL Server / LocalDB</strong> za shranjevanje relacijskih podatkov.</li>
+                <li><strong>HTML5, CSS3 & Bootstrap 5</strong> za odziven in pregleden uporabniški vmesnik.</li>
+                <li><strong>GitHub</strong> za verzioniranje kode.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
