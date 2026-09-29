@@ -1,7 +1,177 @@
-<h1>Calorie Counter</h1>
-<hr>
-<div>
-    <div>
-        <h3>Overview / Opis</h3>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacija Calorie Counter - Nejc Sever Mihelič</title>
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-dark: #047857;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gradient: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            --card-bg: #ffffff;
+            --border-color: #a7f3d0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: var(--card-bg);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 5px;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 4px;
+            background: var(--primary-color);
+            width: 80px;
+            margin: 0 0 30px 0;
+            border-radius: 2px;
+        }
+
+        .overview-section {
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-dark);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Aplikacija Calorie Counter</h1>
+        <div class="subtitle">Osebni projekt | Nejc Sever Mihelič</div>
+        <hr>
+        
+        <div class="overview-section">
+            <h3>Pregled delovanja aplikacije</h3>
+            <p>Projekt predstavlja sodobno spletno aplikacijo za spremljanje dnevnega vnosa kalorij in makrohranil (beljakovine, ogljikovi hidrati, maščobe), razvito z ogrodjem <strong>ASP.NET Core MVC</strong>. Glavni cilj sistema je uporabnikom omogočiti enostavno načrtovanje prehrane, bilanco kalorij ter doseganje osebnih fitnes ciljev (izguba teže, vzdrževanje ali pridobivanje mase).</p>
+            
+            <p>Sistem vključuje varno avtentikacijo uporabnikov, vodenje baze živil ter natančen pregled dnevnega napredka s pomočjo interaktivnih grafičnih prikazov. Podatkovna struktura temelji na zanesljivi SQL bazi preko Entity Framework Core, kar omogoča hitro preračunavanje hranilnih vrednosti in varno shranjevanje podatkov.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>Vodenje Dnevnika Prehrane</h4>
+                <p>Enostaven vnos obrokov po kategorijah (zajtrk, kosilo, večerja, prigrizki) ter samodejni izračun skupnih kalorij.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Sledenje Makrohranilom</h4>
+                <p>Natančen pregled vnosa beljakovin, ogljikovih hidratov in maščob z vizualnimi indikatorji dnevnih ciljev.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Baza Živil & Iskanje</h4>
+                <p>Pregledna baza živil z možnostjo dodajanja lastnih sestavin in prilagojenih velikosti porcij.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Uporabniški Profil & Cilji</h4>
+                <p>Izračun priporočenega dnevnega vnosa kalorij (BMR/TDEE) glede na starost, težo, višino in raven telesne aktivnosti.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Varnost & Identity</h4>
+                <p>Uporaba ASP.NET Identity za varno registracijo, prijavo in zaščito osebnih podatkov uporabnika.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Odziven Dizajn</h4>
+                <p>Prilagojen uporabniški vmesnik za nemoteno uporabo na mobilnih telefonih, tablicah in namiznih računalnikih.</p>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>Tehnologije in Orodja</h3>
+            <p>Projekt je razvit z uporabo sodobnih tehnologij za spletni razvoj:</p>
+            <ul>
+                <li><strong>Visual Studio 2022</strong> za razvoj in upravljanje projekta.</li>
+                <li><strong>ASP.NET Core MVC</strong> za robustno backend logiko in arhitekturo.</li>
+                <li><strong>Entity Framework Core</strong> za delo s podatkovno bazo (ORM).</li>
+                <li><strong>SQL Server / LocalDB</strong> za shranjevanje podatkov o živilih in dnevnikih.</li>
+                <li><strong>HTML5 & CSS3 / Bootstrap</strong> za moderen, odziven in pregleden uporabniški vmesnik.</li>
+                <li><strong>GitHub</strong> za verzioniranje kode.</li>
+            </ul>
+        </div>
     </div>
-</div>
+</body>
+</html>
